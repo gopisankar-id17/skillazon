@@ -1,0 +1,274 @@
+.chat-app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.back-button-container {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.mode-selection {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: white;
+}
+
+.selection-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.selection-header h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.selection-header p {
+  font-size: 1.3rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.mode-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.mode-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+}
+
+.mode-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.mode-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.mode-card h3 {
+  font-size: 1.8rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.mode-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.features-list li {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.select-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  margin-top: auto;
+}
+
+.select-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.select-button.primary {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  border-color: #48bb78;
+}
+
+.select-button.primary:hover {
+  background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+  border-color: #38a169;
+}
+
+.setup-instructions {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 2rem;
+}
+
+.setup-instructions h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: #ffd700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.instructions-content {
+  text-align: left;
+  line-height: 1.6;
+}
+
+.instructions-content p {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.instructions-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.instructions-content li {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.instructions-content code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #ffd700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mode-selection {
+    padding: 1rem;
+  }
+  
+  .selection-header h1 {
+    font-size: 2rem;
+  }
+  
+  .selection-header p {
+    font-size: 1.1rem;
+  }
+  
+  .mode-options {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .mode-card {
+    min-height: 350px;
+    padding: 1.5rem;
+  }
+  
+  .mode-icon {
+    font-size: 3rem;
+  }
+  
+  .mode-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .setup-instructions {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mode-selection {
+    padding: 0.5rem;
+  }
+  
+  .selection-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .selection-header p {
+    font-size: 1rem;
+  }
+  
+  .mode-card {
+    min-height: 300px;
+    padding: 1rem;
+  }
+  
+  .mode-icon {
+    font-size: 2.5rem;
+  }
+  
+  .mode-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .mode-card p {
+    font-size: 0.9rem;
+  }
+  
+  .setup-instructions {
+    padding: 1rem;
+  }
+  
+  .setup-instructions h3 {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "skillazon-auth-server",
+  "version": "1.0.0",
+  "description": "Authentication server for Skillazon application",
+  "main": "authServer.js",
+  "scripts": {
+    "start": "node authServer.js",
+    "dev": "nodemon authServer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "authentication",
+    "jwt",
+    "express",
+    "bcrypt",
+    "auth"
+  ],
+  "author": "Skillazon Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
