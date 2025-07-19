@@ -51,18 +51,21 @@ const Navbar = () => {
             <Link 
               to="/" 
               className={`menu-item ${isActive('/') ? 'active' : ''}`}
+              onClick={() => console.log('🔗 Navbar: Home clicked')}
             >
               Home
             </Link>
             <Link 
               to="/skills" 
               className={`menu-item ${isActive('/skills') ? 'active' : ''}`}
+              onClick={() => console.log('🔗 Navbar: Skills clicked')}
             >
               Skills
             </Link>
             <Link 
               to="/professionals" 
               className={`menu-item ${isActive('/professionals') ? 'active' : ''}`}
+              onClick={() => console.log('🔗 Navbar: Professionals clicked')}
             >
               Professionals
             </Link>
@@ -71,12 +74,14 @@ const Navbar = () => {
                 <Link 
                   to="/dashboard" 
                   className={`menu-item ${isActive('/dashboard') ? 'active' : ''}`}
+                  onClick={() => console.log('🔗 Navbar: Dashboard clicked')}
                 >
                   Dashboard
                 </Link>
                 <Link 
                   to="/my-bookings" 
                   className={`menu-item ${isActive('/my-bookings') ? 'active' : ''}`}
+                  onClick={() => console.log('🔗 Navbar: My Bookings clicked')}
                 >
                   My Bookings
                   {(upcomingBookings > 0 || pendingBookings > 0) && (
@@ -88,6 +93,7 @@ const Navbar = () => {
                 <Link 
                   to="/chat" 
                   className={`menu-item ${isActive('/chat') ? 'active' : ''}`}
+                  onClick={() => console.log('🔗 Navbar: Messages clicked')}
                 >
                   Messages
                 </Link>

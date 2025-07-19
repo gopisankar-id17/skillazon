@@ -4,11 +4,15 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background: #acf2cf;
+  color: var(--text-primary);
 }
 
 .main-content {
   width: 100%;
   min-height: calc(100vh - 80px);
+  background: #acf2cf;
+  padding-top: 80px;
 }
 
 .App-header {
@@ -20,16 +24,18 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--accent-green-border);
   max-width: 600px;
   width: 90%;
   margin: 2rem;
+  box-shadow: var(--shadow-green);
 }
 
 .App-header h1 {
   font-size: 3rem;
   margin: 0 0 1rem 0;
   font-weight: 700;
+  color: var(--primary-green);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -37,11 +43,12 @@
   font-size: 1.3rem;
   margin: 0 0 2rem 0;
   opacity: 0.9;
+  color: var(--text-secondary);
 }
 
 .chat-button {
-  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-  color: white;
+  background: var(--gradient-primary);
+  color: var(--text-light);
   border: none;
   padding: 1rem 2rem;
   font-size: 1.2rem;

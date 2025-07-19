@@ -2,7 +2,7 @@
 .dashboard {
   width: 100%;
   min-height: 100vh;
-  background: #f9fafb;
+  background: transparent;
   padding: 40px 0;
 }
 
@@ -19,12 +19,12 @@
 .dashboard-header h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 10px;
 }
 
 .dashboard-header p {
-  color: #6b7280;
+  color: var(--text-secondary);
   font-size: 1.1rem;
 }
 
@@ -43,10 +43,10 @@
 }
 
 .stat-card {
-  background: white;
+  background: var(--bg-primary);
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease;
 }
 

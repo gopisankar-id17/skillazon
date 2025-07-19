@@ -1,0 +1,72 @@
+/* Skillazon Color Theme */
+:root {
+  /* Primary Colors */
+  --primary-green: #49c486;
+  --primary-dark: #050505;
+  --bg-mint: #acf2cf;
+  
+  /* Variations of Primary Green */
+  --primary-green-light: #5dd498;
+  --primary-green-lighter: #71e4aa;
+  --primary-green-dark: #3fb574;
+  --primary-green-darker: #359862;
+  
+  /* Variations of Primary Dark */
+  --primary-dark-light: #1a1a1a;
+  --primary-dark-lighter: #2d2d2d;
+  --secondary-dark: #111111;
+  
+  /* Neutral Colors */
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  
+  /* Accent Colors (derived from green) */
+  --accent-green-bg: rgba(73, 196, 134, 0.1);
+  --accent-green-border: rgba(73, 196, 134, 0.2);
+  --accent-dark-bg: rgba(5, 5, 5, 0.1);
+  --accent-dark-border: rgba(5, 5, 5, 0.2);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  --gradient-dark: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-dark-light) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-dark) 100%);
+  
+  /* Shadows */
+  --shadow-green: 0 4px 20px rgba(73, 196, 134, 0.3);
+  --shadow-dark: 0 4px 20px rgba(5, 5, 5, 0.3);
+  --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-strong: 0 16px 40px rgba(0, 0, 0, 0.15);
+  
+  /* Text Colors */
+  --text-primary: var(--primary-dark);
+  --text-secondary: var(--gray-600);
+  --text-light: var(--white);
+  --text-muted: var(--gray-500);
+  
+  /* Background Colors */
+  --bg-primary: var(--white);
+  --bg-secondary: var(--gray-50);
+  --bg-dark: var(--primary-dark);
+  --bg-green: var(--primary-green);
+  
+  /* Border Colors */
+  --border-light: var(--gray-200);
+  --border-medium: var(--gray-300);
+  --border-dark: var(--gray-400);
+  --border-green: var(--primary-green);
+  
+  /* Error Colors */
+  --error-text: #dc2626;
+  --error-bg: #fee2e2;
+  --error-border: #fecaca;
+}

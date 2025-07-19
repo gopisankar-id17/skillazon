@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import './Auth.css';
 
@@ -11,6 +12,11 @@ const Login = ({ onSwitchToRegister }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const { login, error } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Get the intended destination from location state, default to dashboard
+  const from = location.state?.from?.pathname || '/dashboard';
 
   const handleChange = (e) => {
     setFormData({
@@ -26,8 +32,9 @@ const Login = ({ onSwitchToRegister }) => {
     const result = await login(formData.email, formData.password);
     
     if (result.success) {
-      // Login successful, user will be redirected by AuthProvider
-      console.log('Login successful');
+      // Login successful, redirect to intended destination or dashboard
+      console.log('Login successful, redirecting to:', from);
+      navigate(from, { replace: true });
     }
     
     setIsSubmitting(false);

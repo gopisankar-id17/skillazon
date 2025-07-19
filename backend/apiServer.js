@@ -10,7 +10,7 @@ const skillRoutes = require('./routes/skills');
 const bookingRoutes = require('./routes/bookings');
 
 const app = express();
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.API_PORT || 3004;
 
 // Initialize database connection
 let dbConnected = false;

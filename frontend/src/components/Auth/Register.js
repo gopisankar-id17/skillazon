@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import './Auth.css';
 
 const Register = ({ onSwitchToLogin }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -16,6 +17,9 @@ const Register = ({ onSwitchToLogin }) => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const { register, error } = useAuth();
+
+  // Get the intended destination from location state, default to dashboard
+  const from = location.state?.from?.pathname || '/dashboard';
 
   const handleChange = (e) => {
     setFormData({
@@ -36,17 +40,12 @@ const Register = ({ onSwitchToLogin }) => {
     );
     
     if (result.success) {
-      // Registration successful, navigate to home page
-      console.log('Registration successful');
+      // Registration successful, navigate to intended destination or dashboard
+      console.log('Registration successful, redirecting to:', from);
       setIsSubmitting(false);
       
-      // If this component is used in AuthPage context, use the prop
-      if (onSwitchToLogin) {
-        onSwitchToLogin();
-      } else {
-        // If used in routing context, navigate to home page
-        navigate('/');
-      }
+      // Navigate to intended destination or dashboard
+      navigate(from, { replace: true });
       return;
     }
     

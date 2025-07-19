@@ -110,7 +110,7 @@ app.get('/api/messages', (req, res) => {
   res.json({ messages: messageHistory });
 });
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.CHAT_PORT || 3002;
 
 server.listen(PORT, () => {
   console.log(`\n🚀 Skillazon Chat Server running on port ${PORT}`);

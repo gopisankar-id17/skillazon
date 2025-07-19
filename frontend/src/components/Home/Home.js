@@ -88,14 +88,14 @@ const Home = () => {
               )}
             </div>
           </div>
+          
+          {/* Hero Image */}
           <div className="hero-image">
-            <div className="hero-illustration">
-              <div className="skill-bubble">JavaScript</div>
-              <div className="skill-bubble">Design</div>
-              <div className="skill-bubble">Spanish</div>
-              <div className="skill-bubble">Guitar</div>
-              <div className="skill-bubble">Marketing</div>
-            </div>
+            <img 
+              src="/tech skills.png" 
+              alt="Tech Skills Illustration" 
+              className="tech-skills-image"
+            />
           </div>
         </div>
       </section>
@@ -206,6 +206,37 @@ const Home = () => {
             <Link to="/skills" className="btn btn-outline">
               View All Skills
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Topics Slider Section */}
+      <section className="topics-slider">
+        <div className="container">
+          <div className="section-header">
+            <h2>Explore Programming Topics</h2>
+            <p>Master essential skills for your development journey</p>
+          </div>
+          <div className="slider-container">
+            <div className="slider-track">
+              <div className="slider-item">Programming Languages</div>
+              <div className="slider-item">Data Structures and Algorithms</div>
+              <div className="slider-item">Web Development</div>
+              <div className="slider-item">Database Management</div>
+              <div className="slider-item">Operating Systems & Networking</div>
+              <div className="slider-item">Version Control</div>
+              <div className="slider-item">Cloud & DevOps Basics</div>
+              <div className="slider-item">Software Engineering Practices</div>
+              {/* Duplicate items for seamless loop */}
+              <div className="slider-item">Programming Languages</div>
+              <div className="slider-item">Data Structures and Algorithms</div>
+              <div className="slider-item">Web Development</div>
+              <div className="slider-item">Database Management</div>
+              <div className="slider-item">Operating Systems & Networking</div>
+              <div className="slider-item">Version Control</div>
+              <div className="slider-item">Cloud & DevOps Basics</div>
+              <div className="slider-item">Software Engineering Practices</div>
+            </div>
           </div>
         </div>
       </section>
