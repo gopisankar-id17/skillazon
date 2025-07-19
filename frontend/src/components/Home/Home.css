@@ -2,12 +2,13 @@
 .home {
   width: 100%;
   min-height: 100vh;
+  background: transparent;
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: var(--gradient-hero);
+  color: var(--text-light);
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
@@ -20,7 +21,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(5, 5, 5, 0.1);
   z-index: 1;
 }
 
@@ -58,6 +59,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.tech-skills-image {
+  max-width: 100%;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.tech-skills-image:hover {
+  transform: scale(1.05);
 }
 
 .hero-illustration {
@@ -120,9 +136,9 @@
 
 /* Stats Section */
 .stats {
-  background: white;
+  background: transparent;
   padding: 80px 0;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid rgba(73, 196, 134, 0.3);
 }
 
 .container {
@@ -143,18 +159,18 @@
 .stat-number {
   font-size: 3rem;
   font-weight: 700;
-  color: #667eea;
+  color: var(--primary-green);
   margin-bottom: 10px;
 }
 
 .stat-label {
   font-size: 1.1rem;
-  color: #6b7280;
+  color: var(--text-secondary);
 }
 
 /* Features Section */
 .features {
-  background: #f9fafb;
+  background: transparent;
   padding: 100px 0;
 }
 
@@ -166,13 +182,13 @@
 .section-header h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 16px;
 }
 
 .section-header p {
   font-size: 1.2rem;
-  color: #6b7280;
+  color: var(--text-secondary);
 }
 
 .features-grid {
@@ -182,17 +198,20 @@
 }
 
 .feature-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   padding: 40px 30px;
   border-radius: 16px;
   text-align: center;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
 }
 
 .feature-icon {
@@ -203,18 +222,18 @@
 .feature-card h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 16px;
 }
 
 .feature-card p {
-  color: #6b7280;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
 /* Categories Section */
 .categories {
-  background: white;
+  background: transparent;
   padding: 100px 0;
 }
 
@@ -228,8 +247,9 @@
   display: flex;
   align-items: center;
   padding: 30px;
-  background: white;
-  border: 2px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   text-decoration: none;
   color: inherit;
@@ -237,9 +257,10 @@
 }
 
 .category-card:hover {
-  border-color: #667eea;
+  border-color: var(--primary-green);
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-green);
 }
 
 .category-icon {
@@ -250,18 +271,18 @@
 .category-info h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 5px;
 }
 
 .category-info span {
-  color: #6b7280;
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 
 /* Top Skills Section */
 .top-skills {
-  background: #f9fafb;
+  background: transparent;
   padding: 100px 0;
 }
 
@@ -273,18 +294,21 @@
 }
 
 .skill-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   padding: 30px;
   border-radius: 16px;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
 }
 
 .skill-header {
@@ -297,7 +321,7 @@
 .skill-header h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   flex: 1;
   margin-right: 15px;
 }
@@ -306,7 +330,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #f59e0b;
+  color: var(--primary-green);
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -316,7 +340,7 @@
 }
 
 .skill-description {
-  color: #6b7280;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 20px;
   display: -webkit-box;
@@ -347,12 +371,12 @@
 
 .skill-teacher span {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: var(--text-secondary);
 }
 
 .skill-price {
   font-weight: 600;
-  color: #667eea;
+  color: var(--primary-green);
   font-size: 1.1rem;
 }
 
@@ -362,8 +386,9 @@
 
 /* CTA Section */
 .cta {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: rgba(73, 196, 134, 0.15);
+  border: 1px solid rgba(73, 196, 134, 0.3);
+  color: var(--text-primary);
   padding: 100px 0;
   text-align: center;
 }
@@ -395,40 +420,117 @@
 }
 
 .btn-primary {
-  background: #667eea;
-  color: white;
+  background: var(--gradient-primary);
+  color: var(--text-light);
 }
 
 .btn-primary:hover {
-  background: #5a67d8;
+  background: var(--primary-green-dark);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-green);
 }
 
 .btn-secondary {
   background: transparent;
-  color: white;
-  border-color: white;
+  color: var(--text-primary);
+  border-color: var(--primary-green);
 }
 
 .btn-secondary:hover {
-  background: white;
-  color: #667eea;
+  background: var(--primary-green);
+  color: var(--text-light);
+  border-color: var(--primary-green);
 }
 
 .btn-outline {
   background: transparent;
-  color: #667eea;
-  border-color: #667eea;
+  color: var(--primary-green);
+  border-color: var(--primary-green);
 }
 
 .btn-outline:hover {
-  background: #667eea;
-  color: white;
+  background: var(--primary-green);
+  color: var(--text-light);
 }
 
 .btn-large {
   padding: 18px 36px;
   font-size: 1.1rem;
+}
+
+/* Topics Slider Section */
+.topics-slider {
+  padding: 80px 0;
+  background: rgba(73, 196, 134, 0.05);
+  overflow: hidden;
+}
+
+.topics-slider .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.topics-slider h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.topics-slider p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.slider-track {
+  display: flex;
+  width: 200%;
+  animation: slide 30s linear infinite;
+}
+
+.slider-item {
+  flex: 0 0 auto;
+  background: var(--card-bg);
+  margin: 0 15px;
+  padding: 20px 30px;
+  border-radius: 50px;
+  box-shadow: var(--shadow-card);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.slider-item:hover {
+  background: var(--primary-green);
+  color: var(--text-light);
+  border-color: var(--primary-green);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-green);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.slider-container:hover .slider-track {
+  animation-play-state: paused;
 }
 
 /* Responsive Design */
@@ -451,6 +553,10 @@
   .hero-illustration {
     width: 300px;
     height: 300px;
+  }
+  
+  .tech-skills-image {
+    max-height: 300px;
   }
   
   .stats-grid {
@@ -477,6 +583,20 @@
   
   .skill-card {
     padding: 20px;
+  }
+  
+  .topics-slider {
+    padding: 60px 0;
+  }
+  
+  .topics-slider h2 {
+    font-size: 2rem;
+  }
+  
+  .slider-item {
+    padding: 15px 25px;
+    margin: 0 10px;
+    font-size: 0.9rem;
   }
 }
 
@@ -520,5 +640,19 @@
   .btn {
     padding: 12px 24px;
     font-size: 0.9rem;
+  }
+  
+  .topics-slider {
+    padding: 40px 0;
+  }
+  
+  .topics-slider h2 {
+    font-size: 1.8rem;
+  }
+  
+  .slider-item {
+    padding: 12px 20px;
+    margin: 0 8px;
+    font-size: 0.85rem;
   }
 }

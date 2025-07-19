@@ -19,22 +19,30 @@ export const AuthProvider = ({ children }) => {
 
   // Check if user is logged in on app start
   useEffect(() => {
-    const token = localStorage.getItem('accessToken');
-    if (token) {
-      fetchUserProfile();
-    } else {
-      setLoading(false);
-    }
-  }, []);
+    const checkAuthStatus = async () => {
+      const token = localStorage.getItem('accessToken');
+      if (token) {
+        console.log('Token found in localStorage, fetching user profile...');
+        await fetchUserProfile();
+      } else {
+        console.log('No token found in localStorage');
+        setLoading(false);
+      }
+    };
+    
+    checkAuthStatus();
+  }, []); // Remove fetchUserProfile dependency to avoid infinite loop
 
   const fetchUserProfile = async () => {
     try {
       const token = localStorage.getItem('accessToken');
       if (!token) {
+        console.log('No access token found');
         setLoading(false);
         return;
       }
 
+      console.log('Fetching user profile with token...');
       const response = await fetch(`${API_BASE_URL}/profile`, {
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -42,18 +50,21 @@ export const AuthProvider = ({ children }) => {
         }
       });
 
+      console.log('Profile response status:', response.status);
+
       if (response.ok) {
         const data = await response.json();
+        console.log('Profile data received:', data);
         setUser(data.user);
+        setLoading(false);
       } else {
+        console.log('Profile fetch failed, attempting token refresh...');
         // Token might be expired, try to refresh
         await refreshToken();
       }
     } catch (error) {
       console.error('Error fetching user profile:', error);
       logout();
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -61,10 +72,12 @@ export const AuthProvider = ({ children }) => {
     try {
       const refreshToken = localStorage.getItem('refreshToken');
       if (!refreshToken) {
+        console.log('No refresh token found, logging out...');
         logout();
         return;
       }
 
+      console.log('Attempting to refresh token...');
       const response = await fetch(`${API_BASE_URL}/refresh`, {
         method: 'POST',
         headers: {
@@ -73,11 +86,18 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({ refreshToken })
       });
 
+      console.log('Refresh token response status:', response.status);
+
       if (response.ok) {
         const data = await response.json();
+        console.log('Token refreshed successfully');
         localStorage.setItem('accessToken', data.accessToken);
+        if (data.refreshToken) {
+          localStorage.setItem('refreshToken', data.refreshToken);
+        }
         await fetchUserProfile();
       } else {
+        console.log('Token refresh failed, logging out...');
         logout();
       }
     } catch (error) {
@@ -153,9 +173,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
+    console.log('Initiating logout process...');
     try {
       const refreshToken = localStorage.getItem('refreshToken');
       if (refreshToken) {
+        console.log('Notifying server of logout...');
         await fetch(`${API_BASE_URL}/logout`, {
           method: 'POST',
           headers: {
@@ -167,6 +189,7 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       console.error('Error during logout:', error);
     } finally {
+      console.log('Clearing local storage and user state...');
       localStorage.removeItem('accessToken');
       localStorage.removeItem('refreshToken');
       setUser(null);

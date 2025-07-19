@@ -4,6 +4,10 @@ import { AuthProvider } from './contexts/AuthContext';
 import { SkillProvider } from './contexts/SkillContext';
 import { BookingProvider } from './contexts/BookingContext';
 
+// Import theme first
+import './theme.css';
+import './App.css';
+
 // Components
 import Navbar from './components/Navigation/Navbar';
 import Footer from './components/Navigation/Footer';
@@ -22,7 +26,9 @@ import Chat from './components/Chat/Chat';
 import AdminDashboard from './components/Admin/AdminDashboard';
 import TeacherProfile from './components/Profile/TeacherProfile';
 import PrivateRoute from './components/Auth/PrivateRoute';
+import PublicRoute from './components/Auth/PublicRoute';
 import AdminRoute from './components/Auth/AdminRoute';
+import NavigationDebug from './components/Debug/NavigationDebug';
 
 import './App.css';
 
@@ -33,13 +39,22 @@ function App() {
         <BookingProvider>
           <Router>
             <div className="App">
+              <NavigationDebug />
               <Navbar />
               <main className="main-content">
                 <Routes>
                   {/* Public Routes */}
                   <Route path="/" element={<Home />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/register" element={<Register />} />
+                  <Route path="/login" element={
+                    <PublicRoute>
+                      <Login />
+                    </PublicRoute>
+                  } />
+                  <Route path="/register" element={
+                    <PublicRoute>
+                      <Register />
+                    </PublicRoute>
+                  } />
                   <Route path="/skills" element={<Skills />} />
                   <Route path="/skills/:id" element={<SkillDetail />} />
                   <Route path="/teacher/:id" element={<TeacherProfile />} />

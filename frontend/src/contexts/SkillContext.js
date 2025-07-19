@@ -115,7 +115,7 @@ export const SkillProvider = ({ children }) => {
   const { user, token } = useAuth();
 
   // API Base URL
-  const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3003';
+  const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3004';
 
   // Helper function to make API calls
   const apiCall = async (endpoint, options = {}) => {
